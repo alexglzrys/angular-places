@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PlacesService } from '../../services/places.service';
+import { Places } from '../../interfaces/places';
 
 @Component({
   selector: 'app-place-list',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaceListComponent implements OnInit {
 
-  constructor() { }
+  places: Places[] = [];
+
+  constructor(private placesService: PlacesService) { }
 
   ngOnInit(): void {
+    // Suscribirme a cualquier cambio en la colección de lugares
+    this.placesService.getPlaces().subscribe(places => this.places = places);
   }
 
 }
