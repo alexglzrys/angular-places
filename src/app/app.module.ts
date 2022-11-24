@@ -6,14 +6,20 @@ import { AppComponent } from './app.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { NewPaceComponent } from './components/new-pace/new-pace.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PlaceListComponent } from './components/place-list/place-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewPaceComponent,
+    PlaceListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ],

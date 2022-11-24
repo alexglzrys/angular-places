@@ -1,0 +1,18 @@
+<form [formGroup]="registerFormPlace" (submit)="registerPlace()">
+  <div class="mb-3">
+    <input type="text" placeholder="Lugar" class="form-control" formControlName="name">
+  </div>
+  <div class="mb-3">
+    <input type="text" placeholder="Latitud" class="form-control" formControlName="latitude">
+  </div>
+  <div class="mb-3">
+    <input type="text" placeholder="Longitud" class="form-control" formControlName="longitude">
+  </div>
+  <div class="mb-3">
+    <textarea placeholder="Descripción" class="form-control" rows="5" formControlName="description"></textarea>
+  </div>
+  <div class="mb-3">
+    <input type="text" placeholder="Imagen" class="form-control" formControlName="image">
+  </div>
+  <button type="submit" class="btn btn-success">Registrar</button>
+</form>
