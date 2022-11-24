@@ -1,0 +1,7 @@
+<div class="row mt-5">
+  <div class="col">
+    <agm-map [zoom]="13" [latitude]="lat" [longitude]="lng" style="height: 400px;">
+      <agm-marker *ngFor="let place of places" [latitude]="place.latitude" [longitude]="place.longitude"></agm-marker>
+    </agm-map>
+  </div>
+</div>

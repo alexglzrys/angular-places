@@ -1,18 +1,23 @@
 <form [formGroup]="registerFormPlace" (submit)="registerPlace()">
   <div class="mb-3">
-    <input type="text" placeholder="Lugar" class="form-control" formControlName="name">
+    <label for="lugar" class="form-label">Nombre del lugar</label>
+    <input type="text" id="lugar" placeholder="Lugar" class="form-control" formControlName="name">
   </div>
   <div class="mb-3">
-    <input type="text" placeholder="Latitud" class="form-control" formControlName="latitude">
+    <label for="latitud" class="form-label">Latitud</label>
+    <input type="text" id="latitud" placeholder="Latitud" class="form-control" formControlName="latitude">
   </div>
   <div class="mb-3">
-    <input type="text" placeholder="Longitud" class="form-control" formControlName="longitude">
+    <label for="longitud" class="form-label">Longitud</label>
+    <input type="text" id="longitud" placeholder="Longitud" class="form-control" formControlName="longitude">
   </div>
   <div class="mb-3">
+    <label for="descripcion" class="form-label">Descripción detallada del lugar</label>
     <textarea placeholder="Descripción" class="form-control" rows="5" formControlName="description"></textarea>
   </div>
   <div class="mb-3">
-    <input type="text" placeholder="Imagen" class="form-control" formControlName="image">
+    <label for="iamgen" class="form-label">URL de imagen representava</label>
+    <input type="text" id="imagen" placeholder="Imagen" class="form-control" formControlName="image">
   </div>
   <button type="submit" class="btn btn-success">Registrar</button>
 </form>
