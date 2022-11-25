@@ -12,7 +12,7 @@ export const environment = {
     messagingSenderId: '1091865789621',
   },
   production: false,
-  apiKeyGoogle: 'AIzaSyAf0IQ_yB3_UKyO_O7o7W2nyUKrAzz24is'
+  apiKeyGoogle: '----'
 };
 
 /*
