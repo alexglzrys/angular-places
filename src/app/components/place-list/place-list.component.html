@@ -8,7 +8,7 @@
         <h5 class="card-title">{{ place.name }}</h5>
         <p class="card-text">{{ place.description }}</p>
         <p class="card-text"><small class="text-muted">Coordenadas: {{ place.longitude }} / {{ place.latitude }}</small></p>
-        <button class="btn btn-outline-danger btn-sm">Borrar</button>
+        <button class="btn btn-outline-danger btn-sm" (click)="deletePlace(place)">Borrar</button>
       </div>
     </div>
   </div>

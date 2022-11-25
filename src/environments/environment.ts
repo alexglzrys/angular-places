@@ -11,7 +11,8 @@ export const environment = {
     authDomain: 'angular-empleados-it.firebaseapp.com',
     messagingSenderId: '1091865789621',
   },
-  production: false
+  production: false,
+  apiKeyGoogle: 'AIzaSyAf0IQ_yB3_UKyO_O7o7W2nyUKrAzz24is'
 };
 
 /*

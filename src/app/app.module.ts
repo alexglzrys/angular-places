@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,8 @@ import { PlaceListComponent } from './components/place-list/place-list.component
 import { AgmCoreModule } from '@agm/core';
 import { PlaceMapComponent } from './components/place-map/place-map.component';
 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,8 +26,10 @@ import { PlaceMapComponent } from './components/place-map/place-map.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAf0IQ_yB3_UKyO_O7o7W2nyUKrAzz24is',
+      apiKey: environment.apiKeyGoogle,
     }),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
