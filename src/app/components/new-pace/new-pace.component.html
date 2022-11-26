@@ -17,7 +17,8 @@
   </div>
   <div class="mb-3">
     <label for="iamgen" class="form-label">URL de imagen representava</label>
-    <input type="text" id="imagen" placeholder="Imagen" class="form-control" formControlName="image">
+    <!-- Campo que no forma parte del formulario reactivo -->
+    <input type="file" id="imagen" placeholder="Imagen" class="form-control" (change)="uploadImage($event)">
   </div>
   <button type="submit" class="btn btn-success">Registrar</button>
 </form>
