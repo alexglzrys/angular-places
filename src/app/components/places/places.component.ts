@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-places',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlacesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authServce: AuthService,
+              private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  async logout() {
+    try {
+      this.authServce.logout();
+      this.router.navigateByUrl('/login');
+    } catch (err) {
+      console.log(err);
+    }
   }
 
 }
