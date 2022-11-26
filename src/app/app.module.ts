@@ -17,6 +17,7 @@ import { PlaceMapComponent } from './components/place-map/place-map.component';
 import { ToastrModule } from 'ngx-toastr';
 import { RegisterComponent } from './auth/register/register.component';
 import { PlacesComponent } from './components/places/places.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PlacesComponent } from './components/places/places.component';
     PlaceListComponent,
     PlaceMapComponent,
     RegisterComponent,
-    PlacesComponent
+    PlacesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
