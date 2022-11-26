@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, UserCredential } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, UserCredential } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -11,5 +11,10 @@ export class AuthService {
   // Registrar un usuario usando el método de email y password
   register({email, password}: any): Promise<UserCredential> {
     return createUserWithEmailAndPassword(this.auth, email, password);
+  }
+
+  // Login de usuarios con email y contraseña
+  login({email, password}: any): Promise<UserCredential> {
+    return signInWithEmailAndPassword(this.auth, email, password);
   }
 }
