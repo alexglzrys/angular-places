@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { getAuth, provideAuth } from '@angular/fire/auth'
 import { NewPaceComponent } from './components/new-pace/new-pace.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PlaceListComponent } from './components/place-list/place-list.component';
@@ -26,13 +27,15 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule, // required animations module
+    BrowserAnimationsModule,
     ToastrModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: environment.apiKeyGoogle,
     }),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
+    // Importar los proveedores de cada servicio de Firebase usado en nuestra aplicación - Nueva API
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]
