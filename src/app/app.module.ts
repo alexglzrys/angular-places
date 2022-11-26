@@ -15,13 +15,17 @@ import { AgmCoreModule } from '@agm/core';
 import { PlaceMapComponent } from './components/place-map/place-map.component';
 
 import { ToastrModule } from 'ngx-toastr';
+import { RegisterComponent } from './auth/register/register.component';
+import { PlacesComponent } from './components/places/places.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewPaceComponent,
     PlaceListComponent,
-    PlaceMapComponent
+    PlaceMapComponent,
+    RegisterComponent,
+    PlacesComponent
   ],
   imports: [
     BrowserModule,
