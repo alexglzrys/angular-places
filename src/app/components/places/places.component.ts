@@ -17,7 +17,7 @@ export class PlacesComponent implements OnInit {
 
   async logout() {
     try {
-      this.authServce.logout();
+      await this.authServce.logout();
       this.router.navigateByUrl('/login');
     } catch (err) {
       console.log(err);

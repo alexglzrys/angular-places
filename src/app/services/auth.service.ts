@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, UserCredential } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut, UserCredential } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,12 @@ export class AuthService {
   // Login de usuarios con email y contraseña
   login({email, password}: any): Promise<UserCredential> {
     return signInWithEmailAndPassword(this.auth, email, password);
+  }
+
+  // Login con redes sociales - Google
+  loginWithGoogle(): Promise<UserCredential> {
+    // Lanzar el popup, indicando una instancia del proveedor o servicio para autenticación
+    return signInWithPopup(this.auth, new GoogleAuthProvider());
   }
 
   // logout

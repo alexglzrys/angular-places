@@ -36,4 +36,14 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  async loginWithGoogle() {
+    try {
+      const response = await this.authService.loginWithGoogle();
+      this.router.navigateByUrl('/places')
+      console.log(response);
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
 }
