@@ -24,6 +24,7 @@ import { PlaceMapComponent } from './components/place-map/place-map.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { PlacesComponent } from './components/places/places.component';
 import { LoginComponent } from './auth/login/login.component';
+import { GeturlPipe } from './pipes/geturl.pipe';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { LoginComponent } from './auth/login/login.component';
     PlaceMapComponent,
     RegisterComponent,
     PlacesComponent,
-    LoginComponent
+    LoginComponent,
+    GeturlPipe
   ],
   imports: [
     BrowserModule,

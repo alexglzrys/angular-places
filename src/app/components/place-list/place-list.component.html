@@ -1,7 +1,7 @@
 <div *ngFor="let place of places" class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-4">
-      <img [src]="place.image" class="img-fluid rounded-start" [alt]="place.name">
+      <img [src]="place.image | geturl | async" class="img-fluid rounded-start" [alt]="place.name">
     </div>
     <div class="col-md-8">
       <div class="card-body">

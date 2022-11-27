@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PlacesService } from '../../services/places.service';
 import { Places } from '../../interfaces/places';
 import { ToastrService } from 'ngx-toastr';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-place-list',

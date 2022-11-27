@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ref, Storage, uploadBytes, UploadResult } from '@angular/fire/storage';
+import { getDownloadURL, ref, Storage, uploadBytes, UploadResult } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +13,12 @@ export class StorageService {
     const fileRef = ref(this.storage, `places/${filename}`);
     // subir archivo
     return uploadBytes(fileRef, file);
+  }
+
+  getURLFile(path: string): Promise<string> {
+    // Obtener una referencia al archivo que se desea descargar
+    const imageRef = ref(this.storage, path);
+    // retornar la url pública de este archivo
+    return getDownloadURL(imageRef)
   }
 }

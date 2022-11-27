@@ -50,12 +50,12 @@ export class NewPaceComponent implements OnInit {
     const filename = new Date().getTime();
     const file_name_with_extension = `${filename}.${file.name.split('.').pop()}`;
 
-    // Los campos de tipo File que forman parte de un formulario reactivo, es imposible establecer su valor de forma programatica, por tanto, este enfoque es el camino a seguir si se desea colocar un nombre personalizado
-    this.registerFormPlace.patchValue({ image: file_name_with_extension });
-
     // Subir archivo a la nube de almacenamiento de Firebase
     try {
       const response = await this.storageService.upload(filename, file);
+      // Los campos de tipo File que forman parte de un formulario reactivo, es imposible establecer su valor de forma programatica
+      // por tanto, este enfoque es el camino a seguir si se desea colocar un nombre personalizado
+      this.registerFormPlace.patchValue({ image: response.metadata.fullPath });
       console.log(response);
     } catch (err) {
       console.log(err);
