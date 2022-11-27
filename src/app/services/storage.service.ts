@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { getDownloadURL, ref, Storage, uploadBytes, UploadResult } from '@angular/fire/storage';
+import { getDownloadURL, listAll, ref, Storage, uploadBytes, UploadResult } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +20,23 @@ export class StorageService {
     const imageRef = ref(this.storage, path);
     // retornar la url pública de este archivo
     return getDownloadURL(imageRef)
+  }
+
+  async getListURLFiles(): Promise<string[]> {
+    const images: string[] = [];
+    // Obtener la referencia al path dónde se localizan todas las imágenes
+    const imagesRef = ref(this.storage, `places`);
+
+    try {
+      // Obtener un listado de todas ellas
+      const imagesStorage = await listAll(imagesRef)
+      // Generar la URL para cada imagen encontrada en la referencia indicada
+      imagesStorage.items.forEach(async (image) => images.push(await getDownloadURL(image)))
+      return images;
+    } catch (err) {
+      console.log(err);
+      return images;
+    }
+
   }
 }

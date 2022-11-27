@@ -25,6 +25,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { PlacesComponent } from './components/places/places.component';
 import { LoginComponent } from './auth/login/login.component';
 import { GeturlPipe } from './pipes/geturl.pipe';
+import { PlaceImagesComponent } from './components/place-images/place-images.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { GeturlPipe } from './pipes/geturl.pipe';
     RegisterComponent,
     PlacesComponent,
     LoginComponent,
-    GeturlPipe
+    GeturlPipe,
+    PlaceImagesComponent
   ],
   imports: [
     BrowserModule,

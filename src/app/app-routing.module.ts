@@ -4,12 +4,18 @@ import { RegisterComponent } from './auth/register/register.component';
 import { PlacesComponent } from './components/places/places.component';
 import { LoginComponent } from './auth/login/login.component';
 import { canActivate, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard'
+import { PlaceImagesComponent } from './components/place-images/place-images.component';
 
 const routes: Routes = [
   {
     path: 'places',
     component: PlacesComponent,
     // Nueva API de Angular Fire (ya contiene guards para saber si un usuario esta o no autenticado)
+    ...canActivate(() => redirectUnauthorizedTo('/login'))
+  },
+  {
+    path: 'images',
+    component: PlaceImagesComponent,
     ...canActivate(() => redirectUnauthorizedTo('/login'))
   },
   {
